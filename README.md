@@ -4,7 +4,8 @@ Up to 10 different key sounds.
 
 - On Windows/Linux - File > Preferences > Settings
 - On macOS - Code > Preferences > Settings
-![Setup page]!(setup.png)
+
+![Setup page](setup.png)
 
 ### here's the repo: https://github.com/pxai/mktypesound-vscode
 
