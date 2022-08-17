@@ -1,6 +1,10 @@
 # Mechanical Keyboard Type sounds for VSCPDE
 Let your VSCode sound like a Mechanical Keyboard.
-Based on Timmy Reilly's https://github.com/timmyreilly/TypewriterNoises-VSCode
+Up to 10 different key sounds.
+
+- On Windows/Linux - File > Preferences > Settings
+- On macOS - Code > Preferences > Settings
+![Setup page]!(setup.png)
 
 ### here's the repo: https://github.com/pxai/mktypesound-vscode
 
@@ -25,6 +29,8 @@ code \
 * Select the remove box 
 
 # Dev:
-vsce login
-vsce package
-vsce publish
+- vsce login
+- vsce package
+- vsce publish
+
+Inspired on Timmy Reilly's https://github.com/timmyreilly/TypewriterNoises-VSCode

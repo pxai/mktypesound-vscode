@@ -23,8 +23,8 @@ export default class EditorObserver {
     }
 
     private _getLatestConfig() {
-        this._active = vscode.workspace.getConfiguration('mktypesound').get('enable');
-        this._keyboardId = vscode.workspace.getConfiguration('mktypesound').get('sound');
+        this._active = Boolean(vscode.workspace.getConfiguration('mktypesound').get('enable'));
+        this._keyboardId = Number(vscode.workspace.getConfiguration('mktypesound').get('sound'));
     }
     
     private _hasTextChanged(e: vscode.TextEditorSelectionChangeEvent) {
