@@ -4,9 +4,14 @@ Up to 10 different key sounds.
 
 - On Windows/Linux - File > Preferences > Settings
 - On macOS - Code > Preferences > Settings
-![Setup page]!(setup.png)
 
-### here's the repo: https://github.com/pxai/mktypesound-vscode
+![Setup page](setup.png)
+
+## Plugin page
+
+https://marketplace.visualstudio.com/items?itemName=pello.mktypesound-vscode
+## Github Repo
+https://github.com/pxai/mktypesound-vscode
 
 # Local test
 code \
