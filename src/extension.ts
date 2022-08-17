@@ -38,7 +38,6 @@ export class AudioPlay {
         if (this._isWindows) {
             cp.execFile(this._playExe_path, [this._keypress_path]);
         } else {
-            window.showInformationMessage('Play> key')
             player.play(this._keypress_path, { 
                 afplay: ['-v', this.random(1, 10) ], 
                 mplayer: ['-af', `volume=${this.random(1, 40)}`], 
@@ -48,7 +47,6 @@ export class AudioPlay {
 
     private random(min: number, max: number) {
         const value = Math.round((Math.random() * (max - min)) + min)
-        window.showInformationMessage(`Running random value: ${min} ${max} ${value}`)
         return value
     }
     

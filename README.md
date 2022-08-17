@@ -24,4 +24,7 @@ code \
 * 'Extensions: Show Installed Extensions'
 * Select the remove box 
 
-
+# Dev:
+vsce login
+vsce package
+vsce publish
