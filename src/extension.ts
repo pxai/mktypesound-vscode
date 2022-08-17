@@ -31,10 +31,10 @@ export class AudioPlay {
     private keyboard: number = 8;
     private _playExe_path:string = path.join(__dirname, '..', '..', 'audio', 'play.exe');    
     private _keypress_path:string = path.join(__dirname, '..', '..', 'audio', 'mk' + this.keyboard + '.wav');
-    private _carriagereturn_path:string = path.join(__dirname, '..','..','audio','mk' + this.keyboard + '.wav');
     private _isWindows:boolean;
     
-    public playKeystroke (keyboard: number = 7) {
+    public playKeystroke (keyboard: number = 5) {
+        this._keypress_path = path.join(__dirname, '..', '..', 'audio', 'mk' + keyboard + '.wav');
         if (this._isWindows) {
             cp.execFile(this._playExe_path, [this._keypress_path]);
         } else {

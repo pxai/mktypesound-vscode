@@ -2,7 +2,7 @@
   "name": "mktypesound-vscode",
   "displayName": "Mechanical Keyboard Sounds",
   "description": "Adds mechanical keyboard sounds whenever you type",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "publisher": "pello",
   "engines": {
     "vscode": "^0.10.1"
@@ -24,7 +24,7 @@
     "Other"
   ],
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
   "main": "./out/src/extension",
   "contributes": {
@@ -33,7 +33,24 @@
         "command": "extension.sayHello",
         "title": "Mechanical Keyboard Sounds"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Keyboard Sounds",
+      "properties": {
+        "mktypesound.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Toggle sound"
+        },
+        "mktypesound.sound": {
+          "type": "number",
+          "default": 5,
+          "enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+          "enumDescriptions": ["Kb0", "Kb1", "Kb2", "Kb3", "Kb4", "Kb5", "Kb6", "Kb7", "Kb8", "Kb9"],
+          "description": "Number of keyboard sound: 0 to 9"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "node ./node_modules/vscode/bin/compile",

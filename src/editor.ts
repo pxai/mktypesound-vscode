@@ -7,20 +7,24 @@ export default class EditorObserver {
     private _audioplayer: AudioPlay;
     private _lastText : any;
     private _lastLine: number;
+    private _active: boolean = true;
+    private _keyboardId: number = 0;
     
     constructor(audioplayer: AudioPlay) {
         this._audioplayer = audioplayer;
-        
+
+        this._getLatestConfig();
+        //console.log("See option: sound ", this._active, this._keyboardId)
+
         // subscribe to selection change and editor activation events...
         let subscriptions: Disposable[] = [];
-        window.onDidChangeTextEditorSelection(this._onEvent, this, subscriptions);
-        window.onDidChangeActiveTextEditor(this._onEvent, this, subscriptions);
-        
+        workspace.onDidChangeTextDocument(this._onEvent, this, subscriptions)
         this._disposable = Disposable.from(...subscriptions);
     }
-    
-    private _getLetterCount(doc: TextDocument): number {
-        return doc.getText().split("").length;
+
+    private _getLatestConfig() {
+        this._active = vscode.workspace.getConfiguration('mktypesound').get('enable');
+        this._keyboardId = vscode.workspace.getConfiguration('mktypesound').get('sound');
     }
     
     private _hasTextChanged(e: vscode.TextEditorSelectionChangeEvent) {
@@ -32,8 +36,9 @@ export default class EditorObserver {
     }
     
     private _onEvent(e: any) {
-        if (!this._hasTextChanged(e)) return; 
-
-        this._audioplayer.playKeystroke();
+        //if (!this._hasTextChanged(e)) return; 
+        this._getLatestConfig();
+        if (this._active)
+            this._audioplayer.playKeystroke(this._keyboardId);
     }
 }
