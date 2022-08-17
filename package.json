@@ -1,0 +1,51 @@
+{
+  "name": "mktype",
+  "displayName": "Mechanical Keyboard Sounds",
+  "description": "Adds mechanical keyboard sounds whenever you type",
+  "version": "0.0.1",
+  "publisher": "pxai",
+  "engines": {
+    "vscode": "^0.10.1"
+  },
+  "homepage": "https://github.com/pxai/mktypesound-vscode",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pxai/mktypesound-vscode"
+  },
+  "keywords": [
+    "Sound",
+    "keyboard",
+    "fun",
+    "readme",
+    "repo"
+  ],
+  "icon": "icon.png",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.sayHello",
+        "title": "Mechanical Keyboard Sounds"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+    "pretest": "tsc",
+    "test": "mocha --ui tdd ./out/test/extension.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^1.6.2",
+    "vscode": "0.10.x"
+  },
+  "dependencies": {
+    "play-sound": "0.0.7"
+  }
+}
