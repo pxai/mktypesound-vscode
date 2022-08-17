@@ -1,9 +1,9 @@
 {
-  "name": "mktype",
+  "name": "mktypesound-vscode",
   "displayName": "Mechanical Keyboard Sounds",
   "description": "Adds mechanical keyboard sounds whenever you type",
   "version": "0.0.1",
-  "publisher": "pxai",
+  "publisher": "pello",
   "engines": {
     "vscode": "^0.10.1"
   },

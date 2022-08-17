@@ -24,7 +24,7 @@ suite("Extension Tests", () => {
 		let audioPlayer = new myExtension.AudioPlay();
 		assert.doesNotThrow(
 			function () {
-				audioPlayer.playCarriageReturn()
+				audioPlayer.playKeystroke()
 			},
 			Error
 		)

@@ -45,18 +45,6 @@ export class AudioPlay {
             });
         }
     }
-    
-    public playCarriageReturn (keyboard: number = 7) {
-        if (this._isWindows) {
-            cp.execFile(this._playExe_path, [this._carriagereturn_path]);
-        } else {
-            window.showInformationMessage('Play> Return')
-            player.play(this._carriagereturn_path, { 
-                afplay: ['-v', this.random(1, 10) ],
-                mplayer: ['-af', `volume=${this.random(1, 40)}` ], 
-            });
-        }
-    }
 
     private random(min: number, max: number) {
         const value = Math.round((Math.random() * (max - min)) + min)
