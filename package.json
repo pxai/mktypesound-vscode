@@ -61,5 +61,8 @@
   "devDependencies": {
     "typescript": "^1.6.2",
     "vscode": "0.10.x"
+  },
+  "dependencies": {
+    "play-sound": "0.0.7"
   }
 }

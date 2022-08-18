@@ -6,7 +6,7 @@ import cp = require('child_process');
 import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from 'constants';
 
 var path = require("path");
-var player = require('./play')({})// require('play-sound')({});
+var player = require('play-sound')({});
 
 // this method is called when your extension is activated. activation is
 // controlled by the activation events defined in package.json
