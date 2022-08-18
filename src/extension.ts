@@ -6,7 +6,7 @@ import cp = require('child_process');
 import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from 'constants';
 
 var path = require("path");
-var player = require('play-sound')({});
+var player = require('./play')({})// require('play-sound')({});
 
 // this method is called when your extension is activated. activation is
 // controlled by the activation events defined in package.json
@@ -39,8 +39,8 @@ export class AudioPlay {
             cp.execFile(this._playExe_path, [this._keypress_path]);
         } else {
             player.play(this._keypress_path, { 
-                afplay: ['-v', this.random(1, 10) ], 
-                mplayer: ['-af', `volume=${this.random(1, 40)}`], 
+                afplay: ['-v', this.random(1, 10), '-r', this.random(8, 12)/10 ], 
+                mplayer: ['-volume', this.random(20, 80), '-speed', this.random(8, 10)/10], 
             });
         }
     }

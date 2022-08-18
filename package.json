@@ -2,7 +2,7 @@
   "name": "mktypesound-vscode",
   "displayName": "Mechanical Keyboard Sounds",
   "description": "Adds mechanical keyboard sounds whenever you type",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "pello",
   "engines": {
     "vscode": "^0.10.1"
@@ -61,8 +61,5 @@
   "devDependencies": {
     "typescript": "^1.6.2",
     "vscode": "0.10.x"
-  },
-  "dependencies": {
-    "play-sound": "0.0.7"
   }
 }
