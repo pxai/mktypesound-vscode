@@ -11,13 +11,13 @@ var player = require('play-sound')({});
 // this method is called when your extension is activated. activation is
 // controlled by the activation events defined in package.json
 
-var letterCounter, audioPlayer, controller;
+var audioPlayer, controller;
 
 export function activate(ctx: ExtensionContext) {
 
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
-    console.log('Congratulations, your extension "mktype" is now active!');
+    window.showInformationMessage('Congratulations, your extension "mktype" is now active!');
     
     audioPlayer = audioPlayer || new AudioPlay();
     controller = controller || new EditorObserver(audioPlayer);
@@ -30,11 +30,11 @@ export function activate(ctx: ExtensionContext) {
 export class AudioPlay {
     private keyboard: number = 8;
     private _playExe_path:string = path.join(__dirname, '..', '..', 'audio', 'play.exe');    
-    private _keypress_path:string = path.join(__dirname, '..', '..', 'audio', 'mk' + this.keyboard + '.wav');
+    private _keypress_path:string = path.join(__dirname, '..', '..', 'audio', 'mk' + this.keyboard + '.mp3');
     private _isWindows:boolean;
     
     public playKeystroke (keyboard: number = 5) {
-        this._keypress_path = path.join(__dirname, '..', '..', 'audio', 'mk' + keyboard + '.wav');
+        this._keypress_path = path.join(__dirname, '..', '..', 'audio', 'mk' + keyboard + '.mp3');
         if (this._isWindows) {
             cp.execFile(this._playExe_path, [this._keypress_path]);
         } else {

@@ -5,8 +5,6 @@ import {AudioPlay} from './extension';
 export default class EditorObserver {
     private _disposable: Disposable;
     private _audioplayer: AudioPlay;
-    private _lastText : any;
-    private _lastLine: number;
     private _active: boolean = true;
     private _keyboardId: number = 0;
     
