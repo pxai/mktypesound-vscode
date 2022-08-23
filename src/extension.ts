@@ -33,14 +33,14 @@ export class AudioPlay {
     private _keypress_path:string = path.join(__dirname, '..', '..', 'audio', 'mk' + this.keyboard + '.mp3');
     private _isWindows:boolean;
     
-    public playKeystroke (keyboard: number = 5) {
+    public playKeystroke (keyboard: number = 5, volume: number = 7) {
         this._keypress_path = path.join(__dirname, '..', '..', 'audio', 'mk' + keyboard + '.mp3');
         if (this._isWindows) {
             cp.execFile(this._playExe_path, [this._keypress_path]);
         } else {
             player.play(this._keypress_path, { 
-                afplay: ['-v', this.random(1, 10), '-r', this.random(8, 12)/10 ], 
-                mplayer: ['-volume', this.random(20, 80), '-speed', this.random(8, 10)/10], 
+                afplay: ['-v', volume + this.random(1, 10), '-r', this.random(9, 11)/10 ], 
+                mplayer: ['-volume', (volume * 10) + this.random(10, 30), '-speed', this.random(9, 10)/10], 
             });
         }
     }

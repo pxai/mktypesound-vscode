@@ -7,6 +7,7 @@ export default class EditorObserver {
     private _audioplayer: AudioPlay;
     private _active: boolean = true;
     private _keyboardId: number = 0;
+    private _volume: number = 7;
     
     constructor(audioplayer: AudioPlay) {
         this._audioplayer = audioplayer;
@@ -20,11 +21,12 @@ export default class EditorObserver {
     private _getLatestConfig() {
         this._active = Boolean(vscode.workspace.getConfiguration('mktypesound').get('enable'));
         this._keyboardId = Number(vscode.workspace.getConfiguration('mktypesound').get('sound'));
+        this._volume = Number(vscode.workspace.getConfiguration('mktypesound').get('volume'));
     }
     
     private _onEvent(e: any) {
         this._getLatestConfig();
-        if (this._active)
-            this._audioplayer.playKeystroke(this._keyboardId);
+        if (this._active && this._volume > 0)
+            this._audioplayer.playKeystroke(this._keyboardId, this._volume);
     }
 }

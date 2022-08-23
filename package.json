@@ -2,7 +2,7 @@
   "name": "mktypesound-vscode",
   "displayName": "Mechanical Keyboard Sounds",
   "description": "Adds mechanical keyboard sounds whenever you type",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "publisher": "pello",
   "engines": {
     "vscode": "^0.10.1"
@@ -48,6 +48,13 @@
           "enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
           "enumDescriptions": ["Kb0", "Kb1", "Kb2", "Kb3", "Kb4", "Kb5", "Kb6", "Kb7", "Kb8", "Kb9"],
           "description": "Number of keyboard sound: 0 to 9"
+        },
+        "mktypesound.volume": {
+          "type": "number",
+          "default": 7,
+          "enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+          "enumDescriptions": ["Mute", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"],
+          "description": "Volume level: 0 to 10"
         }
       }
     }

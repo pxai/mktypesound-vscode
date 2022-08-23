@@ -1,6 +1,6 @@
 # Mechanical Keyboard Type sounds for VSCPDE
 Let your VSCode sound like a Mechanical Keyboard.
-Up to 10 different key sounds.
+Up to 10 different key sounds and volume control.
 
 - On Windows/Linux - File > Preferences > Settings
 - On macOS - Code > Preferences > Settings
